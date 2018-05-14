@@ -1,0 +1,9 @@
+.signin-form input{
+	z-index: 200;
+	position: relative;
+}
+.SigninHeadline,
+.SigninSubmitHeadline,
+.SignupHeadline{
+	margin: 0 auto;
+}
