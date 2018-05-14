@@ -32,7 +32,8 @@ constructor(){
 		input: '',
         imageURL: '',
         box: {},
-        route: 'signin'
+        route: 'signin',
+        isSignedIn: false
 	}
 }
 
@@ -68,6 +69,11 @@ onSubmitClick = () => {
 }
 
 onRouteChange = (route) => {
+  if(route === 'signOut'){
+    this.setState({isSignedIn: false})
+  } else if(route === 'home'){
+    this.setState({isSignedIn: 'true'})
+  }
 	this.setState({route: route});
 }
 
@@ -79,7 +85,7 @@ onRouteChange = (route) => {
     		
     		<Particles className='particles' params = {particleOptions} />
 
-    		<Nav onRouteChange={this.onRouteChange}/>
+    		<Nav isSignedIn={this.state.isSignedIn} onRouteChange={this.onRouteChange}/>
 
     		{ this.state.route=== 'home' 
 
